@@ -1,0 +1,78 @@
+<!--doctype html-->
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<link rel="stylesheet" href="../static/css/post.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Clutch circle</title>	
+<!--style----->
+	<style>
+		body{
+			font-family:Calibri;
+		}
+        
+	</style>
+<script>
+var Clicks = 0 ;
+function AddClick(){
+Clicks = Clicks + 1;
+document.getElementById('CountedClicks').innerHTML = Clicks + ' Hits';
+}
+</script>
+</head>
+<body>
+  
+        <!--navigation-->
+        <nav>
+            <!--logo-->
+            <a href="#" class="logo">
+                <img src="../static/img/icon2.jpg"/>
+            </a>
+            <!--menu-btn----------->
+            <input class="menu-btn" type="checkbox" id="menu-btn"/>
+            <label class="menu-icon" for="menu-btn">
+                <span class="nav-icon"></span>
+            </label>
+            <!--menu-->
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="../blog">Blogs</a></li>
+                <li><a href="../suv">suv's</a></li>
+                <li><a href="../sedan">Sedan</a></li>
+                <li><a href="../hatchback">Hatchbacks</a></li>
+                <li><a href="../contact">Contact</a></li>
+               
+                
+            </ul>
+        </nav>
+    <div class="header">
+  <h2>{{blog.title}}</h2>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <p>{{blog.content|safe}}</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      
+     
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="footer">
+  <h3>Email- arora.rahul1997@gmail.com<br>Phone -8368451046 </h3>
+</div>
+
+</div>
+</div>
+   
+</body>
+</html>

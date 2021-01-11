@@ -1,0 +1,66 @@
+<!--doctype html-->
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<link rel="stylesheet" href="../static/css/blog.css">
+<title>Clutch circle</title>	
+<!--style----->
+	<style>
+		body{
+			font-family:Calibri;
+		}
+        
+	</style>
+</head>
+<body>
+  
+        <!--navigation-->
+        <nav>
+            <!--logo-->
+            <a href="/" class="logo">
+                <img src="../static/img/icon2.jpg"/>
+            </a>
+            <!--menu-btn----------->
+            <input class="menu-btn" type="checkbox" id="menu-btn"/>
+            <label class="menu-icon" for="menu-btn">
+                <span class="nav-icon"></span>
+            </label>
+            <!--menu-->
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="../blog">Blogs</a></li>
+                <li><a href="../suv">SUV's</a></li>
+                <li><a href="../sedan">Sedan</a></li>
+                <li><a href="../hatchback">Hatchbacks</a></li>
+                <li><a href="../contact">Contact</a></li>
+               
+                
+            </ul>
+        </nav>
+
+  
+<section class="cards-wrapper">
+
+{% for blog in blogs %}
+  <div class="card-grid-space">
+    <a class="card" href="/blogpost/{{blog.slug}}" style="--bg-img: url(/static/img/carbg.jpg)">
+      <div>
+        <h1>{{blog.title}}</h1>
+        <p>{{blog.short_desc|slice:125}}....</p>
+        <div class="date">{{blog.time}}</div>
+        <div class="tags">
+          <div class="tag">read more...</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+  
+  <!-- https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 -->
+
+
+    
+</body>
+</html>

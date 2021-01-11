@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Clutch Circle</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/css/main.css">
+<link href='http://fonts.googleapis.com/css?family=Leckerli+One' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<div class="header">
+  <h1><b>Clutch Circle</b></h1>
+  
+</div>
+
+<div class="navbar">
+  <a href="/" class="active">Home</a>
+  <a href="blog">Blogs</a>
+  <a href="contact" class="right">Contact</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>About Me</h2>
+    <h5>Photo of me:</h5>
+    <div class="fakeimg1" style="height:200px;"><img src="/static/img/car22.ico" alt=""></div>
+    <br>
+    <br>
+    <h3>More Text</h3>
+    <p>Hello ! I am Rahul a car enthusiast and i bring you a place where you can get all the latest information about cars in India </p>
+   
+  </div>
+  <div class="main">
+  <h2>Top Selling Cars of  2020</h2>
+  {% for blog in blog %}   
+    <h5>{{blog.time}}</h5>
+    <div class="fakeimg2" style="height:400px;"><img src="{{blog.image.url}}" alt=""></div>
+    <br>
+    <br>
+    <p>{{blog.title}}</p>
+    <p style="font-size:20px;font-family:'system-ui' ;">{{blog.short_desc|slice:195}}<a href="/blogpost/{{blog.slug}}">Read More...</a></p>
+    <br>
+  {% endfor %}
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Email me : arora.rahul1997@gmail.com   <br>Phone : 8368451046 </h2>
+  <a href="#" class="fa fa-github"></a>
+  <a href="#" class="fa fa-google"></a>
+</div>
+
+</body>
+</html>
